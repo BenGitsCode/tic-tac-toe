@@ -1,2 +1,86 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+///Dat body
+body {
+  width: 100%;
+  font-family: Impact, Charcoal, sans-serif;
+  margin: 0 auto;
+  background-color: #336e7B;
+
+}
+//ID container
+#mainContainer {
+  margin: 0 auto;
+  width: 90%;
+}
+//Id Main Heading
+#mainHeading {
+  text-align: center;
+  font-size: 50px;
+}
+//Main Header title
+#header {
+  color: #E87E04;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: separate;
+}
+
+td {
+  font-size: 4em;
+  text-align: center;
+  color: #ffffff;
+  width: 130px;
+  height: 130px;
+}
+
+.box-cell {
+  border: 2px solid black;
+  border-radius: 10px;
+  opacity: .75;
+  box-shadow: 2px 2px black;
+}
+
+.box-cell:hover {
+  background-color: #D91E18;
+}
+
+#scoreBoard {
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.score {
+  font-size: 2em;
+}
+
+#xScore {
+  color: #e2f6f2;
+}
+
+#oScore {
+  color: #e2f6f2;
+}
+
+select {
+  background-color: #9ce0d4;
+  border: 1px solid black;
+  height: 50px;
+  font-size: 20px;
+}
+
+#xzibit{
+  color: #e2f6f2;
+}
+
+#oprah{
+  color: #e2f6f2;
+}
+
+img {
+  width: 130px;
+  height: 120px;
+}
