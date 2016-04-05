@@ -5,7 +5,7 @@ const app = require('../app-data');
 const signUp = (success, failure, data) => {
   $.ajax({
     method: 'POST',
-    url: 'http://localhost:3000/sign-up',
+    url: app.api + '/sign-up',
     data
 
   }).done(success)
