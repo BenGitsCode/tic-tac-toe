@@ -8,12 +8,13 @@
 
 
   <header>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-Sign Up Here
-</button>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Sign Up Here
+  </button>
 
 <!-- Modal -->
+<div> <!--modal sign up-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -35,6 +36,22 @@ Sign Up Here
       </div>
       <button type="submit" class="sign-up-btn">Sign up</button>
     </form>
+    <!--end of sign up form-->
+
+    <!--start of sign in form-->
+    <form class="form-inline">
+    <div class="form-group">
+      <label class="sr-only" for="email-input">Email address</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="input-password">Password</label>
+      <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+    </div>
+    <button type="submit" class="sign-in-btn">Sign in</button>
+    <button type="submit" class="sign-out-btn">Sign Out</button>
+  </form>
+
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -42,6 +59,8 @@ Sign Up Here
   </div>
 </div>
 </div>
+
+
 
 
 
@@ -56,8 +75,8 @@ Sign Up Here
         <h1 id="mainHeading" class="col-xs-12">
           Xzbit vs Oprah Tic-Tac-Toe
         </h1>
-
       </div><!-- End header-->
+
 
       <div id="board" class="row">
         <table class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
