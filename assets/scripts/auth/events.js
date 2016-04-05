@@ -19,6 +19,7 @@ const authHandlers = () => {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
+};
 
 
 
