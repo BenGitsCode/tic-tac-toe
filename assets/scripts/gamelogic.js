@@ -2,6 +2,11 @@
 
 require('assets/scripts/index.js');
 
+let turnClick = 0;
+let oPlayerImg;
+let xPlayerImg;
+let playerIcon = ["Xzibit", "Oprah"];
+
 let board = [$("#C1"),$("#C2"),$("#C3"),$("#C4"),$("#C5"),$("#C6"),$("#C7"),$("#C8"),$("#C9")];
 
 let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
@@ -24,9 +29,33 @@ let winArray = [
   rightDiagWin,
 ];
 
+// takes num of clicks % 2
+function getCharacter(numOfClicks){
+  var index = numOfClicks % 2;
+  return playerIcon[index];
+}
 
+$('.startCell').on("click", function(){
+  turnClick++;
+};
 
+let checkWin = function(winArray) {
+  if (turnClick >= 4) {
+  }
+  for (var i = 0; i < array.length; i++) {
+    array[i];
+  }
 
+};
+
+// checks for a tie
+function isTie(){
+  var tie = false;
+  if (turnClick >= 9){
+    tie = true;
+    }
+    return tie;
+  }
 
 
 
