@@ -14,7 +14,7 @@
 let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
-let playerIcons = ["Xzibit", "Oprah"];
+let playerIcons = ["Oprah", "Xzibit"];
 let playerIcon = "";
 
 let board = [$("#C1"),$("#C2"),$("#C3"),$("#C4"),$("#C5"),$("#C6"),$("#C7"),$("#C8"),$("#C9")];
@@ -73,9 +73,11 @@ playerIcon = playerIcons[1];
 
 
 let checkWin = function(winArray) {
+  let win = false;
   if (turnClick >= 4) {
+
   }
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < board.length; i++) {
     array[i];
   }
 
