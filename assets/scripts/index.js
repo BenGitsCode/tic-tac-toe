@@ -4,6 +4,9 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
+<<<<<<< HEAD
+// require('.js');
+=======
 
 
 // require('assets/scripts/index.js');
@@ -115,3 +118,4 @@ function isTie(){
 //    }
 //  }
 // };
+>>>>>>> gamejs
