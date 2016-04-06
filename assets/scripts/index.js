@@ -1,6 +1,9 @@
 'use strict';
 
+const authEvents = require('./auth/events.js');
+$(() => {
 
+authEvents.addHandlers();
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
@@ -10,15 +13,18 @@
 
 // require('assets/scripts/index.js');
 
+
+
 let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
-let playerIcons = ["Oprah", "Xzibit"];
+let playerIcons = ["O", "X"];
 let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
 
-let board = [$("#C1"),$("#C2"),$("#C3"),$("#C4"),$("#C5"),$("#C6"),$("#C7"),$("#C8"),$("#C9")];
+let board = ['', '', '', '', '', '', '', '', '', ];
+
 
 let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
 let centerRowWin = [$("#C4"),$("#C5"),$("#C6")];
@@ -96,6 +102,10 @@ let currentCell = $(this);
   console.log(playerIcon);
   console.log(turnClick);
   currentCell.text(playerIcon);
+  $(this).data('populatedCell', playerIcon);
+  var attrId = $(this).attr('id');
+  board[attrId] = playerIcon;
+  console.log(board);
   console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
   console.log(currentCell.attr('class')); // logs the class of clicked cell
   //checks move validity
@@ -174,3 +184,6 @@ function isTie(){
 //     }
 //     return tie;
 //   }
+
+
+});
