@@ -70,9 +70,11 @@ playerIcon = playerIcons[1];
 
 
 let checkWin = function(winArray) {
+  let win = false;
   if (turnClick >= 4) {
+
   }
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < board.length; i++) {
     array[i];
   }
 
