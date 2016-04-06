@@ -51,29 +51,33 @@ function getPlayer(numOfClicks){
 // THIS WORKS by assigning class changes with color background changes of
 // red and blue to players x and o
 
-$('td').on('click', function(){
-    if (turnClick % 2 === 0) {
-    playerIcon = playerIcons[0];
-    } else {
-    playerIcon = playerIcons[1];
-  }
-  let currentCell = $(this);
-  if (currentCell.hasClass('start-cell')) {
-    console.log(currentCell.attr('class'));
-    currentCell.removeClass('start-cell');
-    console.log(currentCell.attr('class'));
-    currentCell.addClass('playerIcon');
-    console.log(currentCell.attr('class'));
-    console.log((playerIcon));
-  if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
-    currentCell.addClass('xzibit');
-  }else {
-    currentCell.addClass('oprah');
-    }
-    turnClick++;
-  }
-  }
-);
+//turnclick works properlyy here, you cannot count clicks twice once
+// a marker ha sbeen assigned.
+
+// $('td').on('click', function(){
+//     if (turnClick % 2 === 0) {
+//     playerIcon = playerIcons[0];
+//     } else {
+//     playerIcon = playerIcons[1];
+//   }
+//   let currentCell = $(this);
+//   if (currentCell.hasClass('start-cell')) {
+//     console.log(currentCell.attr('class'));
+//     currentCell.removeClass('start-cell');
+//     console.log(currentCell.attr('class'));
+//     currentCell.addClass('playerIcon');
+//     console.log(currentCell.attr('class'));
+//     console.log((playerIcon));
+//   if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
+//     currentCell.addClass('xzibit');
+//   }else {
+//     currentCell.addClass('oprah');
+//     }
+//     turnClick++;
+//     console.log(turnClick);
+//   }
+//   }
+// );
 
 
 
@@ -82,24 +86,36 @@ $('td').on('click', function(){
 // THIS VERSION WORKS
 // it assigns string names to player X and O
 
-// $('td').on('click', function(){
-//   if (turnClick % 2 === 0) {
-//   playerIcon = playerIcons[0];
-// } else {
-// playerIcon = playerIcons[1];
-// }
-// let currentCell = $(this);
-//   console.log(playerIcon);
-//   console.log(turnClick);
-//   currentCell.text(playerIcon);
-//   console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-//   console.log(currentCell.attr('class')); // logs the class of clicked cell
-//   //checks move validity
-//   currentCell.text(playerIcon);
-//    turnClick++;
-// });
+$('td').on('click', function(){
+  if (turnClick % 2 === 0) {
+  playerIcon = playerIcons[0];
+} else {
+playerIcon = playerIcons[1];
+}
+let currentCell = $(this);
+if (currentCell.hasClass('start-cell')) {
+  currentCell.removeClass('start-cell');
+  console.log(playerIcon);
+  console.log(turnClick);
+  currentCell.text(playerIcon);
+  console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
+  console.log(currentCell.attr('class')); // logs the class of clicked cell
+  //checks move validity
+  currentCell.text(playerIcon);
+   turnClick++;
+   console.log(turnClick);
+}
+});
 
-
+// checks for a tie
+function isTie(){
+  let tie = false;
+  if (turnClick > 9){
+    tie = true;
+    }
+    return tie;
+    console.log("It's a tie ya'll!")
+  }
 
 //testing different winner function
 function getWinner(playerIcon) {
@@ -151,14 +167,7 @@ function getWinner(playerIcon) {
 //
 // };
 
-// checks for a tie
-// function isTie(){
-//   var tie = false;
-//   if (turnClick >= 9){
-//     tie = true;
-//     }
-//     return tie;
-//   }
+
 
 
 
