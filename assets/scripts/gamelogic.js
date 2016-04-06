@@ -29,15 +29,24 @@ let winArray = [
   rightDiagWin,
 ];
 
-// takes num of clicks % 2
-function getCharacter(numOfClicks){
-  var index = numOfClicks % 2;
-  return playerIcon[index];
-}
+// // takes num of clicks % 2
+// function getCharacter(numOfClicks){
+//   var index = numOfClicks % 2;
+//   return playerIcon[index];
+// }
 
-$('.startCell').on("click", function(){
+
+
+//td selects all cells
+
+$('td').on('click', function(){
   turnClick++;
-};
+  console.log(turnClick)
+  let currentCell = $(this).id;
+  //checks move validity
+});
+
+
 
 let checkWin = function(winArray) {
   if (turnClick >= 4) {
