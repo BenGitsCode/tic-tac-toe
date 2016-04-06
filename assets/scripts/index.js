@@ -38,7 +38,7 @@ let winArray = [
   rightDiagWin,
 ];
 
-// takes num of clicks % 2
+// takes num of clicks % 2  to determine player icon
 function getPlayer(numOfClicks){
   if (numOfClicks % 2 === 0) {
   playerIcon = playerIcons[0];
@@ -48,28 +48,91 @@ function getPlayer(numOfClicks){
 
 }
 
-
-
-
-//listens for
+// THIS WORKS by assigning class changes with color background changes of
+// red and blue to players x and o
 
 $('td').on('click', function(){
-  turnClick++;
-  if (turnClick % 2 === 0) {
-  playerIcon = playerIcons[0];
-} else {
-playerIcon = playerIcons[1];
-}
-  console.log(playerIcon);
-  console.log(turnClick);
+    turnClick++;
+    if (turnClick % 2 === 0) {
+    playerIcon = playerIcons[0];
+    } else {
+    playerIcon = playerIcons[1];
+  }
   let currentCell = $(this);
-  currentCell.text(playerIcon);
+  if (currentCell.hasClass('start-cell')) {
+    console.log(currentCell.attr('class'));
+    currentCell.removeClass('start-cell');
+    console.log(currentCell.attr('class'));
+    currentCell.addClass('playerIcon');
+    console.log(currentCell.attr('class'));
+    console.log((playerIcon));
+  if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
+    currentCell.addClass('xzibit');
+  }else {
+    currentCell.addClass('oprah');
+    }
+  }
+  }
+);
 
-  console.log(currentCell.id);
-  //checks move validity
-  currentCell.text(playerIcon);
 
-});
+
+// listens for click event on td, sets clicked cell to currentCell and inserts
+// string of current player
+// THIS VERSION WORKS
+// it assigns string names to player X and O
+
+// $('td').on('click', function(){
+//   turnClick++;
+//   if (turnClick % 2 === 0) {
+//   playerIcon = playerIcons[0];
+// } else {
+// playerIcon = playerIcons[1];
+// }
+// let currentCell = $(this);
+//   console.log(playerIcon);
+//   console.log(turnClick);
+//   currentCell.text(playerIcon);
+//   console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
+//   console.log(currentCell.attr('class')); // logs the class of clicked cell
+//   //checks move validity
+//   currentCell.text(playerIcon);
+//
+// });
+
+
+
+//testing different winner function
+function getWinner(playerIcon) {
+  let winner = false;
+  if (
+      //Wins ROWS
+      (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
+      (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
+      (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
+
+      //Wins COLUMNS
+      (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
+      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
+      (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
+
+      //Wins DIAGONALLY
+      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
+      (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
+
+      {
+
+    winner = true;
+      // console.log(winner 'is the winner');
+    }
+    return winner;
+    console.log(winner + " wins!");
+  }
+
+
+
+
+
 
 
 

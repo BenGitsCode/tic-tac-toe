@@ -1,7 +1,7 @@
 'use strict';
 
 //testing different winner function
-function getWinner(#board) {
+function getWinner(playerIcon) {
   let winner = false;
   if (
       //Wins ROWS
@@ -17,6 +17,7 @@ function getWinner(#board) {
       //Wins DIAGONALLY
       (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
       (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
+
       {
 
     winner = true;

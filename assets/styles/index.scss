@@ -56,12 +56,14 @@ select {
   font-size: 20px;
 }
 
-#xzibit{
-  color: #e2f6f2;
+.xzibit {
+  background-image: url('assets/images/xzibit.gif');
+  //background-color: blue;
 }
 
-#oprah{
-  color: #e2f6f2;
+.oprah {
+  background-image: url('assets/images/oprah1.gif');
+  //background-color: red;
 }
 
 img {
