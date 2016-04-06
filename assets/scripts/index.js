@@ -35,9 +35,9 @@ let winner = function(playerIcon) {
        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
 
       console.log("winner is" + playerIcon);
-     return win = true;
+      win = true;
    } else{
-     return false;
+     return win;
  }
 };
 
