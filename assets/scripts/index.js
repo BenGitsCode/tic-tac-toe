@@ -13,8 +13,6 @@ authEvents.addHandlers();
 
 // require('assets/scripts/index.js');
 
-
-
 let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
@@ -24,6 +22,35 @@ let playerIcon = "";
 // let xzibitImg = "";
 
 let board = ['', '', '', '', '', '', '', '', '', ];
+
+function getWinner(playerIcon) {
+  let winner = false;
+  if (
+      //Wins ROWS
+      (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
+      (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
+      (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
+
+      //Wins COLUMNS
+      (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
+      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
+      (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
+
+      //Wins DIAGONALLY
+      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
+      (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
+
+      {
+
+    winner = true;
+      // console.log(winner 'is the winner');
+    }
+    console.log(winner + " wins!");
+    return winner;
+  }
+
+
+
 
 
 let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
@@ -102,12 +129,12 @@ let currentCell = $(this);
   console.log(playerIcon);
   console.log(turnClick);
   currentCell.text(playerIcon);
-  $(this).data('populatedCell', playerIcon);
+  $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
   var attrId = $(this).attr('id');
   board[attrId] = playerIcon;
-  console.log(board);
   console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
   console.log(currentCell.attr('class')); // logs the class of clicked cell
+  console.log(board);
   //checks move validity
   currentCell.text(playerIcon);
    turnClick++;
@@ -115,32 +142,6 @@ let currentCell = $(this);
 
 
 
-//testing different winner function
-function getWinner(playerIcon) {
-  let winner = false;
-  if (
-      //Wins ROWS
-      (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
-      (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
-      (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
-
-      //Wins COLUMNS
-      (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
-
-      //Wins DIAGONALLY
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
-      (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
-
-      {
-
-    winner = true;
-      // console.log(winner 'is the winner');
-    }
-    console.log(winner + " wins!");
-    return winner;
-  }
 
 
 
@@ -187,3 +188,54 @@ function isTie(){
 
 
 });
+
+
+
+
+
+
+// //testing different winner function
+// function getWinner(playerIcon) {
+//   let winner = false;
+//   if (
+//       //Wins ROWS
+//       (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
+//       (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
+//       (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
+//
+//       //Wins COLUMNS
+//       (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
+//       (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
+//       (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
+//
+//       //Wins DIAGONALLY
+//       (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
+//       (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
+//
+//       {
+//
+//     winner = true;
+//       // console.log(winner 'is the winner');
+//     }
+//     console.log(winner + " wins!");
+//     return winner;
+//   }
+
+// let winner = function(playerIcon) {
+//   let win = false;
+//    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
+//        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
+//        playerIcon === board[6] && playerIcon === board[7] && playerIcon === board[8] ||
+//        playerIcon === board[0] && playerIcon === board[3] && playerIcon === board[6] ||
+//        playerIcon === board[1] && playerIcon === board[4] && playerIcon === board[7] ||
+//        playerIcon === board[2] && playerIcon === board[5] && playerIcon === board[8] ||
+//        playerIcon === board[0] && playerIcon === board[4] && playerIcon === board[8] ||
+//        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
+//
+//      return win = true;
+//      console.log("winner is" + playerIcon);
+//    } else{
+//      return false;
+//  }
+// };
+//
