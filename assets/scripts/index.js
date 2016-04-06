@@ -52,7 +52,6 @@ function getPlayer(numOfClicks){
 // red and blue to players x and o
 
 $('td').on('click', function(){
-    turnClick++;
     if (turnClick % 2 === 0) {
     playerIcon = playerIcons[0];
     } else {
@@ -71,6 +70,7 @@ $('td').on('click', function(){
   }else {
     currentCell.addClass('oprah');
     }
+    turnClick++;
   }
   }
 );
@@ -83,7 +83,6 @@ $('td').on('click', function(){
 // it assigns string names to player X and O
 
 // $('td').on('click', function(){
-//   turnClick++;
 //   if (turnClick % 2 === 0) {
 //   playerIcon = playerIcons[0];
 // } else {
@@ -97,7 +96,7 @@ $('td').on('click', function(){
 //   console.log(currentCell.attr('class')); // logs the class of clicked cell
 //   //checks move validity
 //   currentCell.text(playerIcon);
-//
+//    turnClick++;
 // });
 
 
