@@ -13,6 +13,8 @@ let turnClick = 0;
 // let xPlayerImg;
 let playerIcons = ["Oprah", "Xzibit"];
 let playerIcon = "";
+// let oprahImg = "";
+// let xzibitImg = "";
 
 let board = [$("#C1"),$("#C2"),$("#C3"),$("#C4"),$("#C5"),$("#C6"),$("#C7"),$("#C8"),$("#C9")];
 
@@ -41,10 +43,10 @@ function getPlayer(numOfClicks){
   if (numOfClicks % 2 === 0) {
   playerIcon = playerIcons[0];
 } else {
-playerIcon = playerIcons[1];
-}
+ playerIcon = playerIcons[1];
 }
 
+}
 
 
 
@@ -62,34 +64,39 @@ playerIcon = playerIcons[1];
   console.log(turnClick);
   let currentCell = $(this);
   currentCell.text(playerIcon);
+
   console.log(currentCell.id);
   //checks move validity
   currentCell.text(playerIcon);
-  board.push.text(playerIcon);
 
 });
 
 
 
-let checkWin = function(winArray) {
-  let win = false;
-  if (turnClick >= 4) {
 
-  }
-  for (var i = 0; i < board.length; i++) {
-    board[i];
-  }
 
-};
+
+
+
+// let checkWin = function(playerIcon) {
+//   let win = false;
+//   if (turnClick >= 4) {
+//
+//   }
+//   for (var i = 0; i < board.length; i++) {
+//     if (winArray = true)
+//   }
+//
+// };
 
 // checks for a tie
-function isTie(){
-  var tie = false;
-  if (turnClick >= 9){
-    tie = true;
-    }
-    return tie;
-  }
+// function isTie(){
+//   var tie = false;
+//   if (turnClick >= 9){
+//     tie = true;
+//     }
+//     return tie;
+//   }
 
 
 
