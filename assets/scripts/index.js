@@ -65,6 +65,8 @@ playerIcon = playerIcons[1];
   console.log(currentCell.id);
   //checks move validity
   currentCell.text(playerIcon);
+  board.push.text(playerIcon);
+
 });
 
 
@@ -75,7 +77,7 @@ let checkWin = function(winArray) {
 
   }
   for (var i = 0; i < board.length; i++) {
-    array[i];
+    board[i];
   }
 
 };
