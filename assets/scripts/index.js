@@ -21,7 +21,7 @@ let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
 
-let board = ['', '', '', '', '', '', '', '', '', ];
+let board = ["", "", "", "", "", "", "", "", "" ];
 
 function getWinner(playerIcon) {
   let winner = false;
@@ -164,7 +164,7 @@ function isTie(){
 
 
 
-
+});
 
 // let checkWin = function(playerIcon) {
 //   let win = false;
@@ -187,7 +187,7 @@ function isTie(){
 //   }
 
 
-});
+
 
 
 
