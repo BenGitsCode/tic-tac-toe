@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
 
@@ -51,30 +53,31 @@ function getPlayer(numOfClicks){
 
 // THIS WORKS by assigning class changes with color background changes of
 // red and blue to players x and o
+// does not work for css images yet
 
-$('td').on('click', function(){
-    if (turnClick % 2 === 0) {
-    playerIcon = playerIcons[0];
-    } else {
-    playerIcon = playerIcons[1];
-  }
-  let currentCell = $(this);
-  if (currentCell.hasClass('start-cell')) {
-    console.log(currentCell.attr('class'));
-    currentCell.removeClass('start-cell');
-    console.log(currentCell.attr('class'));
-    currentCell.addClass('playerIcon');
-    console.log(currentCell.attr('class'));
-    console.log((playerIcon));
-  if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
-    currentCell.addClass('xzibit');
-  }else {
-    currentCell.addClass('oprah');
-    }
-    turnClick++;
-  }
-  }
-);
+// $('td').on('click', function(){
+//     if (turnClick % 2 === 0) {
+//     playerIcon = playerIcons[0];
+//     } else {
+//     playerIcon = playerIcons[1];
+//   }
+//   let currentCell = $(this);
+//   if (currentCell.hasClass('start-cell')) {
+//     console.log(currentCell.attr('class'));
+//     currentCell.removeClass('start-cell');
+//     console.log(currentCell.attr('class'));
+//     currentCell.addClass('playerIcon');
+//     console.log(currentCell.attr('class'));
+//     console.log((playerIcon));
+//   if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
+//     currentCell.addClass('xzibit');
+//   }else {
+//     currentCell.addClass('oprah');
+//     }
+//     turnClick++;
+//   }
+//   }
+// );
 
 
 
@@ -83,22 +86,22 @@ $('td').on('click', function(){
 // THIS VERSION WORKS
 // it assigns string names to player X and O
 
-// $('td').on('click', function(){
-//   if (turnClick % 2 === 0) {
-//   playerIcon = playerIcons[0];
-// } else {
-// playerIcon = playerIcons[1];
-// }
-// let currentCell = $(this);
-//   console.log(playerIcon);
-//   console.log(turnClick);
-//   currentCell.text(playerIcon);
-//   console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-//   console.log(currentCell.attr('class')); // logs the class of clicked cell
-//   //checks move validity
-//   currentCell.text(playerIcon);
-//    turnClick++;
-// });
+$('td').on('click', function(){
+  if (turnClick % 2 === 0) {
+  playerIcon = playerIcons[0];
+} else {
+playerIcon = playerIcons[1];
+}
+let currentCell = $(this);
+  console.log(playerIcon);
+  console.log(turnClick);
+  currentCell.text(playerIcon);
+  console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
+  console.log(currentCell.attr('class')); // logs the class of clicked cell
+  //checks move validity
+  currentCell.text(playerIcon);
+   turnClick++;
+});
 
 
 

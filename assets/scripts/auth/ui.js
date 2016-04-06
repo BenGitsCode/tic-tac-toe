@@ -2,36 +2,34 @@
 
 const app = require('../app-data');
 
-const signUp = (success, failure, data) => {
-  $.ajax({
-    method: 'POST',
-    url: app.api + '/sign-up',
-    data
-
-  }).done(success)
-    .fail(failure);
+const signInSuccess = (data) => {
+  app.user = data.user;
+  console.log(app);
+  console.log("Sign in successful");
 
 };
 
-const signIn = (success, failure, data) => {
-  $.ajax({
-    method: 'POST',
-    url: app.api + '/sign-in',
-    data,
-    dataProcessing: false,
-
-  }).done(success)
-    .fail(failure);
+const signOutSuccess = () => {
+  app.user = null;
+  console.log(app);
+  console.log("You signed bro. Sweet!");
 };
 
-const signOut = (success, failure) => {
-  // if (!app.user) bad;
-  $.ajax({
-    method: 'DELETE',
-    url: app.api + '/sign-out/' + app.user.id,
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  }).done(success)
-  .fail(failure);
+
+
+
+
+const success = (data) => {
+  console.log(data);
+};
+
+const failure = (error) => {
+  console.error(error);
+};
+
+module.exports = {
+  failure,
+  success,
+  signOutSuccess,
+  signInSuccess,
 };
