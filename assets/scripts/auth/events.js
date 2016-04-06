@@ -1,5 +1,7 @@
 'use strict';
 
+const getFormFields = require('/lib/get-form-fields.js');
+
 const authApi = require('./api');
 const authUi = require('./ui');
 
@@ -22,6 +24,7 @@ const addHandlers = () => {
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
     console.log(data);
   });
+};
 
 
 
