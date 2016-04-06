@@ -23,31 +23,24 @@ let playerIcon = "";
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
-function getWinner(playerIcon) {
-  let winner = false;
-  if (
-      //Wins ROWS
-      (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
-      (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
-      (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
+let winner = function(playerIcon) {
+  let win = false;
+   if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
+       playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
+       playerIcon === board[6] && playerIcon === board[7] && playerIcon === board[8] ||
+       playerIcon === board[0] && playerIcon === board[3] && playerIcon === board[6] ||
+       playerIcon === board[1] && playerIcon === board[4] && playerIcon === board[7] ||
+       playerIcon === board[2] && playerIcon === board[5] && playerIcon === board[8] ||
+       playerIcon === board[0] && playerIcon === board[4] && playerIcon === board[8] ||
+       playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
 
-      //Wins COLUMNS
-      (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
+      console.log("winner is" + playerIcon);
+     return win = true;
+   } else{
+     return false;
+ }
+};
 
-      //Wins DIAGONALLY
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
-      (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
-
-      {
-
-    winner = true;
-      // console.log(winner 'is the winner');
-    }
-    console.log(winner + " wins!");
-    return winner;
-  }
 
 
 
@@ -238,4 +231,3 @@ function isTie(){
 //      return false;
 //  }
 // };
-//
