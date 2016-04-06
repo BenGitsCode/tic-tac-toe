@@ -4,9 +4,6 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-<<<<<<< HEAD
-// require('.js');
-=======
 
 
 // require('assets/scripts/index.js');
@@ -52,7 +49,7 @@ playerIcon = playerIcons[1];
 
 
 
-//td selects all cells
+//listens for
 
 $('td').on('click', function(){
   turnClick++;
@@ -120,4 +117,3 @@ function isTie(){
 //    }
 //  }
 // };
->>>>>>> gamejs
