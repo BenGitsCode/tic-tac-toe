@@ -19,13 +19,13 @@ let playerIcon = "";
 let board = [$("#C1"),$("#C2"),$("#C3"),$("#C4"),$("#C5"),$("#C6"),$("#C7"),$("#C8"),$("#C9")];
 
 let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
-let centerRowWin = [("#C4"),$("#C5"),$("#C6")];
-let botRowWin = [("#C7"),$("#C8"),$("#C9")];
-let topColWin = [("#C1"),$("#C4"),$("#C7")];
-let centerColWin = [("#C2"),$("#C5"),$("#C8")];
-let botColWin = [("#C3"),$("#C6"),$("#C9")];
-let leftDiagWin = [("#C1"),$("#C5"),$("#C9")];
-let rightDiagWin = [("#C3"),$("#C5"),$("#C7")];
+let centerRowWin = [$("#C4"),$("#C5"),$("#C6")];
+let botRowWin = [$("#C7"),$("#C8"),$("#C9")];
+let topColWin = [$("#C1"),$("#C4"),$("#C7")];
+let centerColWin = [$("#C2"),$("#C5"),$("#C8")];
+let botColWin = [$("#C3"),$("#C6"),$("#C9")];
+let leftDiagWin = [$("#C1"),$("#C5"),$("#C9")];
+let rightDiagWin = [$("#C3"),$("#C5"),$("#C7")];
 
 let winArray = [
   topRowWin,
@@ -44,6 +44,7 @@ function getPlayer(numOfClicks){
   playerIcon = playerIcons[0];
 } else {
  playerIcon = playerIcons[1];
+
 }
 
 }
@@ -124,8 +125,8 @@ function getWinner(playerIcon) {
     winner = true;
       // console.log(winner 'is the winner');
     }
-    return winner;
     console.log(winner + " wins!");
+    return winner;
   }
 
 
@@ -135,6 +136,17 @@ function getWinner(playerIcon) {
 
 
 
+
+
+// checks for a tie
+function isTie(){
+  let tie = false;
+  if (turnClick > 9){
+    tie = true;
+    }
+    console.log("It's a tie ya'll!");
+    return tie;
+  }
 
 
 
@@ -159,32 +171,3 @@ function getWinner(playerIcon) {
 //     }
 //     return tie;
 //   }
-
-
-
-
-
-
-
-
-
-
-// Phils wincheck code
-
-
-// let hasUserClass = function(element){
-//  return element.hasClass(users.currentPlayer.cssClass);
-// };
-//
-// let winCheck = function(winArray){
-//    for (let i = 0; i < winArray.length; i++) {
-//      if(winArray[i].every(hasUserClass)) {
-//        users.winner = users.currentPlayer.username;
-//        $('.top-box').text(users.winner + " Wins!");
-//        $('.top-box').css({
-//          'opacity': '1',
-//        'background': users.currentPlayer.background});
-//        break;
-//    }
-//  }
-// };

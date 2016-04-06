@@ -5,4 +5,6 @@ const app = {
   };
 
 
-module.exports = app;
+module.exports =  {
+  app,
+};
