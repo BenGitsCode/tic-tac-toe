@@ -49,7 +49,8 @@ playerIcon = playerIcons[1];
 
 
 
-//listens for
+//listens for click event on any td
+// puts player icon in currentCell (clicked cell)
 
 $('td').on('click', function(){
   turnClick++;
