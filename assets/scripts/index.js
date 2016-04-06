@@ -16,14 +16,14 @@ authEvents.addHandlers();
 let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
-let playerIcons = ["O", "X"];
+let playerIcons = ["Oprah", "Xzibit"];
 let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
-let winner = function(playerIcon) {
+let getWinner = function(board) {
   let win = false;
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
@@ -36,11 +36,13 @@ let winner = function(playerIcon) {
 
       console.log("winner is" + playerIcon);
       win = true;
+      $('td').off('click');
+
    } else{
-     return win;
+
+
  }
 };
-
 
 
 
@@ -112,25 +114,26 @@ function getPlayer(numOfClicks){
 // THIS VERSION WORKS
 // it assigns string names to player X and O
 
-$('td').on('click', function(){
+$('td').one('click', function(){
   if (turnClick % 2 === 0) {
   playerIcon = playerIcons[0];
-} else {
-playerIcon = playerIcons[1];
-}
-let currentCell = $(this);
-  console.log(playerIcon);
-  console.log(turnClick);
-  currentCell.text(playerIcon);
-  $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
-  var attrId = $(this).attr('id');
-  board[attrId] = playerIcon;
-  console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-  console.log(currentCell.attr('class')); // logs the class of clicked cell
-  console.log(board);
-  //checks move validity
-  currentCell.text(playerIcon);
-   turnClick++;
+  } else {
+  playerIcon = playerIcons[1];
+  }
+  let currentCell = $(this);
+    console.log(playerIcon);
+    console.log(turnClick);
+    currentCell.text(playerIcon);
+    $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
+    var attrId = $(this).attr('id');
+    board[attrId] = playerIcon;
+    console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
+    console.log(currentCell.attr('class')); // logs the class of clicked cell
+    console.log(board);
+    //checks move validity
+    currentCell.text(playerIcon);
+     turnClick++;
+     getWinner(board);
 });
 
 
