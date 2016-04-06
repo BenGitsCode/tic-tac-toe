@@ -55,8 +55,11 @@ $('td').on('click', function(){
   turnClick++;
   if (turnClick % 2 === 0) {
   playerIcon = playerIcons[0];
+  $(this).removeClass('start-cell').addClass('Oprah');
 } else {
 playerIcon = playerIcons[1];
+  $(this).removeClass('start-cell').addClass('Xzibit');
+
 }
   console.log(playerIcon);
   console.log(turnClick);
@@ -65,8 +68,7 @@ playerIcon = playerIcons[1];
   console.log(currentCell.id);
   //checks move validity
   currentCell.text(playerIcon);
-  board.push.text(playerIcon);
-
+  // board.push.text(playerIcon);
 });
 
 
@@ -74,11 +76,12 @@ playerIcon = playerIcons[1];
 let checkWin = function(winArray) {
   let win = false;
   if (turnClick >= 4) {
-
   }
+
   for (var i = 0; i < board.length; i++) {
     board[i];
   }
+
 
 };
 

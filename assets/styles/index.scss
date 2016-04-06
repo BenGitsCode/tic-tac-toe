@@ -6,7 +6,7 @@ body {
   width: 100%;
   font-family: Impact, Charcoal, sans-serif;
   margin: 0 auto;
-  background-color: #336e7B;
+  background-color: #336e7b;
 
 }
 //ID container
@@ -21,7 +21,7 @@ body {
 }
 //Main Header title
 #header {
-  color: #E87E04;
+  color: #e87e04;
 }
 
 table {
@@ -45,6 +45,15 @@ td {
   box-shadow: 2px 2px black;
 }
 
+.Xzibit {
+  background-image: src('assets/images/oprah1.gif');
+
+}
+.Oprah {
+  background-image: src('assets/images/xzibit.gif');
+}
+
+
 .start-cell:hover {
   background-color: #D91E18;
 }
@@ -56,13 +65,6 @@ select {
   font-size: 20px;
 }
 
-#xzibit{
-  color: #e2f6f2;
-}
-
-#oprah{
-  color: #e2f6f2;
-}
 
 img {
   width: 130px;
