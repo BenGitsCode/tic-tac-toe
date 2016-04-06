@@ -58,7 +58,7 @@ $('td').on('click', function(){
 } else {
 playerIcon = playerIcons[1];
 }
-  console.log(playerIcon)
+  console.log(playerIcon);
   console.log(turnClick);
   let currentCell = $(this);
   currentCell.text(playerIcon);
