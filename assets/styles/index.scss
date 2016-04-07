@@ -6,7 +6,7 @@ body {
   width: 100%;
   font-family: Impact, Charcoal, sans-serif;
   margin: 0 auto;
-  background-color: #336e7B;
+  background-color: #336e7b;
 
 }
 //ID container
@@ -60,7 +60,10 @@ select {
   margin-top: 20px;
   text-align: center;
 }
-
+#scoreBoard {
+  font-size: 2em;
+  text-align: center;
+}
 .xzibit {
   //background-image: url('/images/xzibit.gif');
   background-color: blue;

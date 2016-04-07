@@ -20,6 +20,8 @@ let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
 let win = false;
+let xWins = 0;
+let oWins = 0;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
@@ -38,8 +40,16 @@ let getWinner = function(board) {
 
       console.log("winner is " + playerIcon);
       win = true;
-      $('td').off('click');
-      
+      if (playerIcon === 'Xzibit') {
+       xWins += 1;
+       $('#xScore').text(xWins);
+     }
+
+     else if (playerIcon === 'Oprah') {
+       oWins +=1;
+       $('#oScore').text(oWins);
+     }
+
     } else{
     }
   };
