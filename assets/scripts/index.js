@@ -13,18 +13,18 @@ authEvents.addHandlers();
 
 // require('assets/scripts/index.js');
 
-let turnClick = 1;
+let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
 let playerIcons = ["Oprah", "Xzibit"];
 let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
+let win = false;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
 let getWinner = function(board) {
-  let win = false;
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
        playerIcon === board[6] && playerIcon === board[7] && playerIcon === board[8] ||
@@ -44,13 +44,13 @@ let getWinner = function(board) {
     }
   };
   // checks for a tie
-  function isTie(){
+  let isTie = function() {
     let tie = false;
-    if (turnClick === 9 && getWinner === false){
+    if (turnClick === 9 && win === false){
       console.log("It's a tie ya'll!");
       tie = true;
       }
-    }
+    };
 
 
 
@@ -61,6 +61,7 @@ let getWinner = function(board) {
         playerIcon = playerIcons[1];
       }
       let currentCell = $(this);
+      turnClick++;
         console.log(playerIcon);
         console.log("turnclicks current" + turnClick);
         currentCell.text(playerIcon);
@@ -71,8 +72,7 @@ let getWinner = function(board) {
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         console.log(board);
         currentCell.text(playerIcon);
-        turnClick++;
       getWinner(board);
-      isTie(board);
+      isTie(turnClick);
     });
   });
