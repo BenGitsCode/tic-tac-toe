@@ -78,13 +78,13 @@ let getWinner = function(board) {
 // ];
 
 // takes num of clicks % 2  to determine player icon
-function getPlayer(numOfClicks){
-  if (numOfClicks % 2 === 0) {
-  playerIcon = playerIcons[0];
-} else {
- playerIcon = playerIcons[1];
-}
-}
+// function getPlayer(numOfClicks){
+//   if (numOfClicks % 2 === 0) {
+//   playerIcon = playerIcons[0];
+// } else {
+//  playerIcon = playerIcons[1];
+// }
+// }
 
 
 
