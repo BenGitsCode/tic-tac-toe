@@ -93,7 +93,7 @@ let getWinner = function(board) {
       $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
 
       // right idea for inserting img into html??
-      $(currentCell.html('<img src=" + xPlayerImg + >');
+      $(currentCell.html('<img src="images/oprah1.gif">');
       let attrId = $(this).attr('id');
       board[attrId] = playerIcon;
       console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
