@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app-data');
+const getWinner = require('../index.js');
 
 const signUp = (success, failure, data) => {
   $.ajax({
@@ -65,25 +66,6 @@ const createGame = (success, failure, data) => {
   .done(success)
   .fail(failure);
 };
-const updateGame = (success, failure) => {
-  $.ajax({
-    method: "PATCH",
-    url: app.api + '/games/' + app.game.id,
-    headers: {
-    Authorization: 'Token token='+ app.user.token,
-  },
-    data: {
-      "game": {
-        "index": app.index,
-        "value": app.value,
-      },
-        "over": false
-    }
-  })
-  .done(success)
-  .fail(failure);
-};
-
 
 
 
