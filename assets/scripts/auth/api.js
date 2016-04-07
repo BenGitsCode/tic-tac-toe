@@ -6,7 +6,7 @@ const signUp = (success, failure, data) => {
   $.ajax({
     method: 'POST',
     url: app.api + '/sign-up',
-    data
+    data,
 
   }).done(success)
     .fail(failure);

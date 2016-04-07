@@ -6,11 +6,11 @@ const authApi = require('./api');
 const authUi = require('./ui');
 
 
-const addHandlers = () => {
+const signcheck = () => {
 
   $('#sign-up').on('submit', function (event) {
-    let data = getFormFields(this);
     event.preventDefault();
+    let data = getFormFields(this);
     authApi.signUp(authUi.success, authUi.failure, data);
     console.log(data);
   });
@@ -36,5 +36,5 @@ const addHandlers = () => {
 
 
   module.exports = {
-   addHandlers,
+   signcheck,
   };

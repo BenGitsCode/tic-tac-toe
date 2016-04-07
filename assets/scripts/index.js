@@ -3,7 +3,7 @@
 const authEvents = require('./auth/events.js');
 $(() => {
 
-authEvents.addHandlers();
+authEvents.signcheck();
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
@@ -115,33 +115,33 @@ let currentCell = $(this);
 
 
 
-//testing different winner function
-function getWinner(playerIcon) {
-  let winner = false;
-  if (
-      //Wins ROWS
-      (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
-      (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
-      (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
-
-      //Wins COLUMNS
-      (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
-      (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
-
-      //Wins DIAGONALLY
-      (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
-      (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
-
-      {
-
-    winner = true;
-      // console.log(winner 'is the winner');
-    }
-    console.log(winner + " wins!");
-    return winner;
-  }
-
+// //testing different winner function
+// function getWinner(playerIcon) {
+//   let winner = false;
+//   if (
+//       //Wins ROWS
+//       (playerIcon === $("#C1") && playerIcon === $("#C2") && playerIcon === $("#C3")) ||
+//       (playerIcon === $("#C4") && playerIcon === $("#C5") && playerIcon === $("#C6")) ||
+//       (playerIcon === $("#C6") && playerIcon === $("#C7") && playerIcon === $("#C8")) ||
+//
+//       //Wins COLUMNS
+//       (playerIcon === $("#C1") && playerIcon === $("#C3") && playerIcon === $("#C")) ||
+//       (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C")) ||
+//       (playerIcon === $("#C2") && playerIcon === $("#C5") && playerIcon === $("#C")) ||
+//
+//       //Wins DIAGONALLY
+//       (playerIcon === $("#C1") && playerIcon === $("#C4") && playerIcon === $("#C"))||
+//       (playerIcon === $("#C2") && playerIcon === $("#C4") && playerIcon === $("#C")))
+//
+//       {
+//
+//     winner = true;
+//       // console.log(winner 'is the winner');
+//     }
+//     console.log(winner + " wins!");
+//     return winner;
+//   }
+//
 
 
 
