@@ -39,17 +39,42 @@ let getWinner = function(board) {
       $('td').off('click');
     } else{
     }
+    console.log("Its a tie");
   };
   // checks for a tie
   function isTie(){
     let tie = false;
-    if (turnClick >= 9 && getWinner === false){
+    if (turnClick >= 9 && getWinner === false) {
       tie = true;
-      console.log("It's a tie ya'll!");
+      console.log("Its a tie ya'll!");
       }
     }
 
 
+
+    $('td').one('click', function(){
+      if (turnClick % 2 === 0) {
+        playerIcon = playerIcons[0];
+      } else {
+        playerIcon = playerIcons[1];
+      }
+      let currentCell = $(this);
+      console.log(playerIcon);
+      console.log(turnClick);
+      currentCell.text(playerIcon);
+      $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
+      let attrId = $(this).attr('id');
+      board[attrId] = playerIcon;
+      console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
+      console.log(currentCell.attr('class')); // logs the class of clicked cell
+      console.log(board);
+      //checks move validity
+      currentCell.text(playerIcon);
+      turnClick++;
+      getWinner(board);
+      isTie(board);
+    });
+  });
 
 
 
@@ -122,27 +147,3 @@ let getWinner = function(board) {
 // string of current player
 // THIS VERSION WORKS
 // it assigns string names to player X and O
-
-$('td').one('click', function(){
-  if (turnClick % 2 === 0) {
-  playerIcon = playerIcons[0];
-  } else {
-  playerIcon = playerIcons[1];
-  }
-  let currentCell = $(this);
-    console.log(playerIcon);
-    console.log(turnClick);
-    currentCell.text(playerIcon);
-    $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
-    let attrId = $(this).attr('id');
-    board[attrId] = playerIcon;
-    console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-    console.log(currentCell.attr('class')); // logs the class of clicked cell
-    console.log(board);
-    //checks move validity
-    currentCell.text(playerIcon);
-     turnClick++;
-     getWinner(board);
-     isTie(board);
-});
-});
