@@ -28,9 +28,15 @@ const signCheck = () => {
   });
   $('#change-password').on('submit', function (event) {
     event.preventDefault();
-    let data = getFormFields(this);
+    let data = "data";
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
+  });
+  $('#new-game').on('submit', function (event) {
+    event.preventDefault();
+    let data = "data";
+    console.log(data);
+    authApi.createGame(authUi.createGameSuccess, authUi.failure, data);
   });
 
 

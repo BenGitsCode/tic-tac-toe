@@ -15,6 +15,11 @@ const signOutSuccess = () => {
   console.log("You signed bro. Sweet!");
 };
 
+const createGameSuccess = (data) => {
+  app.game =data.game;
+  console.log(data);
+  console.log("You created a game, good job!");
+};
 
 
 
@@ -32,4 +37,5 @@ module.exports = {
   success,
   signOutSuccess,
   signInSuccess,
+  createGameSuccess,
 };
