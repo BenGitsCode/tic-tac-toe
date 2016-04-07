@@ -33,7 +33,8 @@ const signOut = (success, failure) => {
     headers: {
       Authorization: 'Token token='+ app.user.token,
     },
-  }).done(success)
+  })
+  .done(success)
   .fail(failure);
 };
 
@@ -47,9 +48,25 @@ const changePass = (success, failure, data) => {
     headers: {
       Authorization: 'Token token='+ app.user.token,
     },
-  }).done(success)
+  })
+  .done(success)
   .fail(failure);
 };
+const createGame = (success, failure, data) => {
+  $.ajax({
+    method: "POST",
+    url: app.api + '/games',
+    data,
+    dataProcessing: false,
+    headers: {
+      Authorization: 'Token token='+ app.user.token,
+    },
+  })
+  .done(success)
+  .fail(failure);
+};
+
+
 
 
 
@@ -58,4 +75,5 @@ module.exports = {
   signIn,
   signOut,
   changePass,
+  createGame
 };
