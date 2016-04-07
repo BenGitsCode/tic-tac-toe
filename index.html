@@ -23,42 +23,38 @@
       <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
     </div>
     <div class="modal-body">
-
-      <!--START of sign up form-->
-
-      <form id="sign-up">
-      <div class="form-group">
-        <label class="sign-up">Email address</label>
-        <input type="email" name="credentials[email]" class="form-control" id="emailInput" placeholder="Email">
+        <form class="form-inline" id="sign-in">
+          <div class="form-group    ">
+            <legend>Welcome Back!</legend>
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <button type="submit">Sign In</button>
+          </div>
+        </form>
+        <form class="form-inline" id="sign-up">
+          <div class="form-group    ">
+            <legend>Don't Have an Account? Sign up Today!</legend>
+            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            <button type="submit">Sign Up</button>
+          </div>
+        </form>
+        <form class="form-inline" id="change-password">
+          <div class="form-group">
+            <legend>Forgot Your Password?</legend>
+            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+            <button type="submit">Change Password</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label class="sign-up">Password</label>
-        <input type="password" name="credentials[password]" class="form-control" id="passwordInput" placeholder="Password">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
-      <button type="submit" class="sign-up-btn">Sign up</button> <!--signUP SUBMIT-->
-      </form>
-    <!--END of sign up form-->
+    </div>
 
-    <!--START of sign in form-->
-    <form id="sign-in">
-    <div class="form-group">
-      <label class="sr-only" name="credentials[email]">Email address</label>
-      <input type="email" class="form-control" id="emailInput" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" name="credentials[password]">Password</label>
-      <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-    </div>
-    <button type="submit" class="sign-in-btn">Sign In</button> <!--signIN SUBMIT-->
-  </form>
-    <!--END of Sign In form-->
-    <!--START of Sign out form-->
-    <form id="sign-out">
-      <button type="submit" class="sign-out-btn">Sign Out</button> <!--signOUT SUBMIT-->
-    </form>
-    <!--END of Sign out form-->
 
-    </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
