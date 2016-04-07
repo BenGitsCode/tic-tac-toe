@@ -18,102 +18,61 @@ let turnClick = 0;
 // let xPlayerImg;
 let playerIcons = ["Oprah", "Xzibit"];
 let playerIcon = "";
-// let oPlayerImg = "assets/images/oprah1.gif";
-// let xPlayerImg = "assets/images/xzibit.gif";
+// let oprahImg = "";
+// let xzibitImg = "";
+let win = false;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
 let getWinner = function(board) {
-  let win = false;
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
        playerIcon === board[6] && playerIcon === board[7] && playerIcon === board[8] ||
+      //  row wins ^
        playerIcon === board[0] && playerIcon === board[3] && playerIcon === board[6] ||
        playerIcon === board[1] && playerIcon === board[4] && playerIcon === board[7] ||
        playerIcon === board[2] && playerIcon === board[5] && playerIcon === board[8] ||
+      //  col wins ^
        playerIcon === board[0] && playerIcon === board[4] && playerIcon === board[8] ||
        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
+        //  diag wins
 
       console.log("winner is " + playerIcon);
       win = true;
       $('td').off('click');
     } else{
     }
-    console.log("Its a tie");
   };
   // checks for a tie
-  function isTie(){
+  let isTie = function() {
     let tie = false;
-    if (turnClick >= 9 && getWinner === false) {
+    if (turnClick === 9 && win === false){
+      console.log("It's a tie ya'll!");
       tie = true;
-      console.log("Its a tie ya'll!");
       }
-    }
-
-    //This function resets the game
-    function newGame(){
-      $('td').removeClass('playerIcon');
-      $('td').addClass('start-cell');
-      $('.start-cell').data('populatedCell', '');
-      board = [];
-      turnClick = 0;
-    }
+    };
 
 
 
-    $('td').on('click', function(){
-        if (turnClick % 2 === 0) {
+    $('td').one('click', function(){
+      if (turnClick % 2 === 0) {
         playerIcon = playerIcons[0];
-        } else {
+      } else {
         playerIcon = playerIcons[1];
       }
       let currentCell = $(this);
-      if (currentCell.hasClass('start-cell')) {
-        console.log(currentCell.attr('class'));
-        currentCell.removeClass('start-cell');
-        console.log(currentCell.attr('class'));
-        currentCell.addClass('playerIcon');
-        console.log(currentCell.attr('class'));
-        console.log((playerIcon));
-      if (playerIcon === 'Xzibit') {     //should this be playerIcons[0] instead of "xzibit"?
-        currentCell.removeClass();
-        currentCell.addClass('xzibit');
-      }else {
-        currentCell.addClass('oprah');
-        }
-        turnClick++;
-        getWinner(board);
-        isTie(board);
-        newGame();
-      }
-      }
-    );
-
-
-  //   $('td').one('click', function(){
-  //     if (turnClick % 2 === 0) {
-  //       playerIcon = playerIcons[0];
-  //     } else {
-  //       playerIcon = playerIcons[1];
-  //     }
-  //     let currentCell = $(this);
-  //     console.log(playerIcon);
-  //     console.log(turnClick);
-  //     currentCell.text(playerIcon);
-  //     $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
-  //
-  //     // right idea for inserting img into html??
-  //
-  //     let attrId = $(this).attr('id');
-  //     board[attrId] = playerIcon;
-  //     console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-  //     console.log(currentCell.attr('class')); // logs the class of clicked cell
-  //     console.log(board);
-  //     //checks move validity
-  //     currentCell.text(playerIcon);
-  //     turnClick++;
-  //     getWinner(board);
-  //     isTie(board);
-  //   });
-
-});
+      turnClick++;
+        console.log(playerIcon);
+        console.log("turnclicks current" + turnClick);
+        currentCell.text(playerIcon);
+        $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
+        let attrId = $(this).attr('id');
+        board[attrId] = playerIcon;
+        console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
+        console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
+        console.log(board);
+        currentCell.text(playerIcon);
+      getWinner(board);
+      isTie(turnClick);
+    });
+  });
