@@ -76,8 +76,8 @@ const updateGame = (success, failure) => {
     data: {
       "game": {
         "cell": {
-          "index": app.game.index,
-          "value": app.game.value
+          "index": app.index,
+          "value": app.value
         },
           // "over": app.game.over,
       }

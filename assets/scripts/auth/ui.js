@@ -47,4 +47,5 @@ module.exports = {
   signInSuccess,
   createGameSuccess,
   updateGameSuccess,
+  app,
 };

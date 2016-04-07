@@ -3,9 +3,9 @@
 
 $(() => {
 const authEvents = require('./auth/events.js');
-// const updateGame = require('../auth/api.js');
+const api = require('./auth/api.js');
 const app = require('./app-data.js');
-// const ui = require('../auth/ui.js');
+const ui = require('./auth/ui.js');
 
 
 
@@ -85,6 +85,7 @@ let getWinner = function(board) {
         currentCell.text(playerIcon);
         app.index =$(this).attr('id');
         app.value = playerIcon;
+        api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
       });
