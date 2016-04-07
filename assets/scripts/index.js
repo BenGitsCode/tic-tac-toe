@@ -37,36 +37,45 @@ let getWinner = function(board) {
       console.log("winner is" + playerIcon);
       win = true;
       $('td').off('click');
+    } else{
+    }
+  };
+  // checks for a tie
+  function isTie(){
+    let tie = false;
+    if (turnClick >= 9){
+      tie = true;
+      }
+      console.log("It's a tie ya'll!");
+      return tie;
+    }
 
-   } else{
-
-
- }
-};
 
 
 
 
 
-let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
-let centerRowWin = [$("#C4"),$("#C5"),$("#C6")];
-let botRowWin = [$("#C7"),$("#C8"),$("#C9")];
-let topColWin = [$("#C1"),$("#C4"),$("#C7")];
-let centerColWin = [$("#C2"),$("#C5"),$("#C8")];
-let botColWin = [$("#C3"),$("#C6"),$("#C9")];
-let leftDiagWin = [$("#C1"),$("#C5"),$("#C9")];
-let rightDiagWin = [$("#C3"),$("#C5"),$("#C7")];
 
-let winArray = [
-  topRowWin,
-  centerRowWin,
-  botRowWin,
-  topColWin,
-  centerColWin,
-  botColWin,
-  leftDiagWin,
-  rightDiagWin,
-];
+
+// let topRowWin = [$("#C1"),$("#C2"),$("#C3")];
+// let centerRowWin = [$("#C4"),$("#C5"),$("#C6")];
+// let botRowWin = [$("#C7"),$("#C8"),$("#C9")];
+// let topColWin = [$("#C1"),$("#C4"),$("#C7")];
+// let centerColWin = [$("#C2"),$("#C5"),$("#C8")];
+// let botColWin = [$("#C3"),$("#C6"),$("#C9")];
+// let leftDiagWin = [$("#C1"),$("#C5"),$("#C9")];
+// let rightDiagWin = [$("#C3"),$("#C5"),$("#C7")];
+//
+// let winArray = [
+//   topRowWin,
+//   centerRowWin,
+//   botRowWin,
+//   topColWin,
+//   centerColWin,
+//   botColWin,
+//   leftDiagWin,
+//   rightDiagWin,
+// ];
 
 // takes num of clicks % 2  to determine player icon
 function getPlayer(numOfClicks){
@@ -74,10 +83,11 @@ function getPlayer(numOfClicks){
   playerIcon = playerIcons[0];
 } else {
  playerIcon = playerIcons[1];
-
+}
 }
 
-}
+
+
 
 // THIS WORKS by assigning class changes with color background changes of
 // red and blue to players x and o
@@ -125,7 +135,7 @@ $('td').one('click', function(){
     console.log(turnClick);
     currentCell.text(playerIcon);
     $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
-    var attrId = $(this).attr('id');
+    let attrId = $(this).attr('id');
     board[attrId] = playerIcon;
     console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
     console.log(currentCell.attr('class')); // logs the class of clicked cell
@@ -134,6 +144,7 @@ $('td').one('click', function(){
     currentCell.text(playerIcon);
      turnClick++;
      getWinner(board);
+     isTie(board);
 });
 
 
@@ -148,15 +159,8 @@ $('td').one('click', function(){
 
 
 
-// checks for a tie
-function isTie(){
-  let tie = false;
-  if (turnClick > 9){
-    tie = true;
-    }
-    console.log("It's a tie ya'll!");
-    return tie;
-  }
+
+
 
 
 
