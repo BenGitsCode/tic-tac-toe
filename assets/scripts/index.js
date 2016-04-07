@@ -3,6 +3,11 @@
 
 $(() => {
 const authEvents = require('./auth/events.js');
+const app = require('./app-data.js');
+// const updateGame = require('../auth/api.js');
+// const ui = require('../auth/ui.js');
+
+
 
 authEvents.signCheck();
 
@@ -10,7 +15,7 @@ authEvents.signCheck();
 let turnClick = 0;
 // let oPlayerImg;
 // let xPlayerImg;
-let playerIcons = ["Oprah", "Xzibit"];
+let playerIcons = ["x", "o"];
 let playerIcon = "";
 // let oprahImg = "";
 // let xzibitImg = "";
@@ -49,6 +54,7 @@ let getWinner = function(board) {
 
 
     $('td').one('click', function(){
+      app.index = $(this).attr('id');
       if (turnClick % 2 === 0) {
         playerIcon = playerIcons[0];
       } else {
@@ -59,13 +65,19 @@ let getWinner = function(board) {
         console.log(playerIcon);
         console.log("turnclicks current" + turnClick);
         currentCell.text(playerIcon);
+        console.log(currentCell.data);
         $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
         let attrId = $(this).attr('id');
+        app.value =$(this).board[attrId];
         board[attrId] = playerIcon;
-        console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
+        currentCell.data('cells', board);
+        currentCell.data('player', playerIcon);
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
-        console.log(board);
+
+
+
         currentCell.text(playerIcon);
+        // console.log(api.updateGame(ui.success, ui.fail));  ///print test
       getWinner(board);
       isTie(turnClick);
     });
