@@ -39,6 +39,7 @@ let getWinner = function(board) {
       console.log("winner is " + playerIcon);
       win = true;
       $('td').off('click');
+      
     } else{
     }
   };
