@@ -34,7 +34,7 @@ let getWinner = function(board) {
        playerIcon === board[0] && playerIcon === board[4] && playerIcon === board[8] ||
        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
 
-      console.log("winner is" + playerIcon);
+      console.log("winner is " + playerIcon);
       win = true;
       $('td').off('click');
     } else{
@@ -43,11 +43,10 @@ let getWinner = function(board) {
   // checks for a tie
   function isTie(){
     let tie = false;
-    if (turnClick >= 9){
+    if (turnClick >= 9 && getWinner === false){
       tie = true;
       console.log("It's a tie ya'll!");
       }
-      return tie;
     }
 
 
