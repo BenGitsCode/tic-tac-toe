@@ -97,4 +97,5 @@ module.exports = {
   changePass,
   createGame,
   updateGame,
+  app,
 };

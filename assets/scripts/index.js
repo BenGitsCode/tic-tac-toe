@@ -4,7 +4,7 @@
 $(() => {
 const authEvents = require('./auth/events.js');
 // const updateGame = require('../auth/api.js');
-// const app = require('../app-data.js');
+const app = require('./app-data.js');
 // const ui = require('../auth/ui.js');
 
 
@@ -83,6 +83,8 @@ let getWinner = function(board) {
         console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         currentCell.text(playerIcon);
+        app.index =$(this).attr('id');
+        app.value = playerIcon;
         getWinner(board);
         isTie(turnClick);
       });

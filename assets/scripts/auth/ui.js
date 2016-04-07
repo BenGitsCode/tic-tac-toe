@@ -22,8 +22,10 @@ const createGameSuccess = (data) => {
 };
 
 const updateGameSuccess = (data) => {
-  app.game = data.game;
   console.log(data);
+  app.gameID = data.game.id;
+  console.log(data);
+  console.log(app);
   console.log("You have updated the game, sweet dude!");
 };
 
