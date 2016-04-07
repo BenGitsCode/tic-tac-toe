@@ -25,7 +25,7 @@
     <div class="modal-body">
 
 
-      <form class="form-inline">
+      <form class="form-inline" id="sign-up">
       <div class="form-group">
         <label class="sign-up" for="email-input">Email address</label>
         <input type="email" class="form-control" id="emailInput" placeholder="Email">
@@ -34,12 +34,12 @@
         <label class="sign-up" for="input-password">Password</label>
         <input type="password" class="form-control" id="passwordInput" placeholder="Password">
       </div>
-      <button type="submit" class="sign-up-btn">Sign up</button> <!--signUP SUBMIT-->
+      <button type="submit" id="sign-up-btn">Sign up</button> <!--signUP SUBMIT-->
     </form>
     <!--end of sign up form-->
 
     <!--start of sign in form-->
-    <form class="form-inline">
+    <form class="form-inline" id="sign-in">
     <div class="form-group">
       <label class="sr-only" for="email-input">Email address</label>
       <input type="email" class="form-control" id="emailInput" placeholder="Email">
@@ -49,9 +49,12 @@
       <input type="password" class="form-control" id="passwordInput" placeholder="Password">
     </div>
     <button type="submit" class="sign-in-btn">Sign In</button> <!--signIN SUBMIT-->
-    <!--end of Sign In form-->
-    <button type="submit" class="sign-out-btn">Sign Out</button> <!--signOUT SUBMIT-->
   </form>
+    <!--end of Sign In form-->
+    <form id="sign-out">
+      <button type="submit" id="sign-out">Sign Out</button> <!--signOUT SUBMIT-->
+    </form>
+      
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
