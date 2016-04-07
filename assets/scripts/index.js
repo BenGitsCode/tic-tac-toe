@@ -13,7 +13,7 @@ authEvents.addHandlers();
 
 // require('assets/scripts/index.js');
 
-let turnClick = 0;
+let turnClick = 1;
 // let oPlayerImg;
 // let xPlayerImg;
 let playerIcons = ["Oprah", "Xzibit"];
@@ -28,11 +28,14 @@ let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
        playerIcon === board[6] && playerIcon === board[7] && playerIcon === board[8] ||
+      //  row wins ^
        playerIcon === board[0] && playerIcon === board[3] && playerIcon === board[6] ||
        playerIcon === board[1] && playerIcon === board[4] && playerIcon === board[7] ||
        playerIcon === board[2] && playerIcon === board[5] && playerIcon === board[8] ||
+      //  col wins ^
        playerIcon === board[0] && playerIcon === board[4] && playerIcon === board[8] ||
        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
+        //  diag wins
 
       console.log("winner is " + playerIcon);
       win = true;
@@ -43,7 +46,7 @@ let getWinner = function(board) {
   // checks for a tie
   function isTie(){
     let tie = false;
-    if (turnClick >= 9 && getWinner === false){
+    if (turnClick === 9 && getWinner === false){
       console.log("It's a tie ya'll!");
       tie = true;
       }
@@ -59,15 +62,14 @@ let getWinner = function(board) {
       }
       let currentCell = $(this);
         console.log(playerIcon);
-        console.log(turnClick);
+        console.log("turnclicks current" + turnClick);
         currentCell.text(playerIcon);
         $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
         let attrId = $(this).attr('id');
         board[attrId] = playerIcon;
-        console.log(currentCell.attr('id')); //logs which cell is clicked by it's id
-        console.log(currentCell.attr('class')); // logs the class of clicked cell
+        console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
+        console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         console.log(board);
-        //checks move validity
         currentCell.text(playerIcon);
         turnClick++;
       getWinner(board);
