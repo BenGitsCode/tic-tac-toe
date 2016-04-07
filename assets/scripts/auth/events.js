@@ -32,7 +32,7 @@ const signCheck = () => {
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
   });
-  $('#new-game').on('submit', function (event) {
+  $('#new-game').on('click', function (event) {
     event.preventDefault();
     let data = "data";
     console.log(data);
