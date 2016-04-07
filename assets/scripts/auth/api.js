@@ -4,18 +4,19 @@ const app = require('../app-data');
 
 const signUp = (success, failure, data) => {
   $.ajax({
-    method: 'POST',
+    method: "POST",
     url: app.api + '/sign-up',
-    data
+    data,
 
-  }).done(success)
-    .fail(failure);
+  })
+  .done(success)
+  .fail(failure);
 
 };
 
 const signIn = (success, failure, data) => {
   $.ajax({
-    method: 'POST',
+    method: "POST",
     url: app.api + '/sign-in',
     data,
     dataProcessing: false,
@@ -27,7 +28,7 @@ const signIn = (success, failure, data) => {
 const signOut = (success, failure) => {
   // if (!app.user) bad;
   $.ajax({
-    method: 'DELETE',
+    method: "DELETE",
     url: app.api + '/sign-out/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -39,7 +40,7 @@ const signOut = (success, failure) => {
 const changePass = (success, failure, data) => {
   // if (!app.user) bad;
   $.ajax({
-    method: 'PATCH',
+    method: "PATCH",
     url: app.api + '/change-password/' + app.user.id,
     data,
     dataProcessing: false,
