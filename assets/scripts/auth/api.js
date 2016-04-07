@@ -31,7 +31,7 @@ const signOut = (success, failure) => {
     method: "DELETE",
     url: app.api + '/sign-out/' + app.user.id,
     headers: {
-      Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token='+ app.user.token,
     },
   }).done(success)
   .fail(failure);
@@ -43,9 +43,9 @@ const changePass = (success, failure, data) => {
     method: "PATCH",
     url: app.api + '/change-password/' + app.user.id,
     data,
-    dataProcessing: false,
+    // dataProcessing: false,
     headers: {
-      Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token='+ app.user.token,
     },
   }).done(success)
   .fail(failure);

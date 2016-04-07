@@ -9,12 +9,12 @@ const authUi = require('./ui');
 const signCheck = () => {
 
   $('#sign-up').on('submit', function (event) {
-    debugger;
-    let data = getFormFields(this);
     event.preventDefault();
+    let data = getFormFields(this);
     authApi.signUp(authUi.success, authUi.failure, data);
     console.log(data);
   });
+
   $('#sign-in').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
@@ -26,6 +26,15 @@ const signCheck = () => {
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
     console.log("signed out");
   });
+  $('#change-password').on('submit', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.changePass(authUi.success, authUi.failure, data);
+    console.log(data);
+  });
+
+
+
 };
 
 

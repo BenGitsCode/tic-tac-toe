@@ -1,7 +1,8 @@
 'use strict';
 
-const authEvents = require('./auth/events.js');
+
 $(() => {
+const authEvents = require('./auth/events.js');
 
 authEvents.signCheck();
 
