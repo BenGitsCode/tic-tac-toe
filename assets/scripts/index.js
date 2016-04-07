@@ -23,7 +23,15 @@ let win = false;
 let xWins = 0;
 let oWins = 0;
 
+
 let board = ["", "", "", "", "", "", "", "", "" ];
+
+let newGame = function(){
+  $('.start-cell').empty();
+  $('.start-cell').data('populatedCell', '');
+  board = [];
+  turnClick = 0;
+};
 
 let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
@@ -43,11 +51,13 @@ let getWinner = function(board) {
       if (playerIcon === 'Xzibit') {
        xWins += 1;
        $('#xScore').text(xWins);
+       
      }
 
      else if (playerIcon === 'Oprah') {
        oWins +=1;
        $('#oScore').text(oWins);
+
      }
 
     } else{
@@ -59,6 +69,7 @@ let getWinner = function(board) {
     if (turnClick === 9 && win === false){
       console.log("It's a tie ya'll!");
       tie = true;
+
       }
     };
 
