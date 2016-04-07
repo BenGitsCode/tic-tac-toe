@@ -21,6 +21,12 @@ const signCheck = () => {
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
     console.log(data);
   });
+  $('#sign-in-two').on('submit', function (event) {
+    let data = getFormFields(this);
+    event.preventDefault();
+    authApi.signIn(authUi.signInSuccess, authUi.failure, data);
+    console.log(data);
+  });
   $('#sign-out').on('submit', function (event) {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
