@@ -33,7 +33,7 @@ const signCheck = () => {
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
     console.log(data);
   });
-  $('#sign-out').on('submit', function (event) {
+  $('#sign-out').on('click', function (event) {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
     console.log("signed out");
