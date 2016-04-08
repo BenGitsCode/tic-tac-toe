@@ -28,12 +28,13 @@ let oWins = 0;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
-let newGame = function(){
-  $('.start-cell').empty();
-  $('.start-cell').data('populatedCell', '');
-  board = [];
-  turnClick = 0;
-};
+// negame doesn't work properly
+// let newGame = function(){
+//   $('.start-cell').empty();
+//   $('.start-cell').data('populatedCell', '');
+//   board = [];
+//   turnClick = 0;
+// };
 
 let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
@@ -49,11 +50,11 @@ let getWinner = function(board) {
         //  diag wins
 
       console.log("winner is " + playerIcon);
-      $('#winner').text("winner is" + playerIcon);
+      $('#winner').text("winner is " + playerIcon);
       win = true;
       if (playerIcon === 'Xzibit') {
        xWins += 1;
-       $('#xScore').text(xWins);
+
 
      }
 
@@ -79,7 +80,7 @@ let getWinner = function(board) {
 
 
 
-    $('td').one('click', function(){
+    $('td').on('click', function(){
       if (turnClick % 2 === 0) {
         playerIcon = playerIcons[0];
       } else {
@@ -105,5 +106,6 @@ let getWinner = function(board) {
         api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
+        $(this).off('click');
       });
     });

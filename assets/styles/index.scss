@@ -16,12 +16,12 @@ body {
 }
 //Id Main Heading
 #main-heading {
-  text-align: center;
   font-size: 50px;
+  text-align: center;
 }
 //Main Header title
 #header {
-  color: #48AD01;
+  color: #48aD01;
 }
 
 #winner {
@@ -67,6 +67,7 @@ select {
 #scoreBoard {
   font-size: 2em;
   text-align: center;
+  margin: 0 auto;
 }
 .xzibit {
   //background-image: url('/images/xzibit.gif');
