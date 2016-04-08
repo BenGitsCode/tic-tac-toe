@@ -50,6 +50,10 @@ const signCheck = () => {
     console.log(data);
     authApi.createGame(authUi.createGameSuccess, authUi.failure, data);
   });
+  $('#reset-game').click(function() {
+    location.reload();
+  });
+
 
 
 
