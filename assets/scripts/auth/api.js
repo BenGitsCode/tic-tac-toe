@@ -14,6 +14,21 @@ const signUp = (success, failure, data) => {
   .fail(failure);
 
 };
+const getGames = (success, failure, data) => {
+  $.ajax({
+    method: "GET",
+    url: app.api + '/games',
+    headers: {
+      Authorization: 'Token token='+ app.user.token,
+    },
+  })
+
+  .done(success)
+  .fail(failure);
+};
+
+
+
 
 const signIn = (success, failure, data) => {
   $.ajax({
@@ -98,4 +113,5 @@ module.exports = {
   createGame,
   updateGame,
   app,
+  getGames,
 };

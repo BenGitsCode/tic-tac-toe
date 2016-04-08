@@ -14,6 +14,12 @@ const signCheck = () => {
     authApi.signUp(authUi.success, authUi.failure, data);
     console.log(data);
   });
+  $('#getGame').on('click', function (event) {
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.getGames(authUi.getGameSuccess, authUi.failure, data);
+    console.log(data);
+  });
 
   $('#sign-in').on('submit', function (event) {
     let data = getFormFields(this);

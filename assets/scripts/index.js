@@ -57,6 +57,7 @@ let getWinner = function(board) {
 
 
 
+
      }
 
      else if (playerIcon === 'Oprah') {
@@ -97,6 +98,7 @@ let getWinner = function(board) {
         board[attrId] = playerIcon;
         currentCell.data('cells', board);
         currentCell.data('player', playerIcon);
+        
         console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         currentCell.text(playerIcon);
