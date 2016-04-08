@@ -17,8 +17,10 @@ let turnClick = 0;
 // let xPlayerImg;
 let playerIcons = ["Xzibit", "Oprah"];
 let playerIcon = "";
-// let oprahImg = "";
-// let xzibitImg = "";
+// let oprahImg = "https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif";
+// let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
+// let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
+// let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwin.gif";
 let win = false;
 let xWins = 0;
 let oWins = 0;
@@ -47,11 +49,12 @@ let getWinner = function(board) {
         //  diag wins
 
       console.log("winner is " + playerIcon);
+      $('#winner').text("winner is" + playerIcon);
       win = true;
       if (playerIcon === 'Xzibit') {
        xWins += 1;
        $('#xScore').text(xWins);
-       
+
      }
 
      else if (playerIcon === 'Oprah') {
@@ -68,6 +71,7 @@ let getWinner = function(board) {
     let tie = false;
     if (turnClick === 9 && win === false){
       console.log("It's a tie ya'll!");
+      $('#winner').text("It's a tie! (everyone loses)");
       tie = true;
 
       }
@@ -94,6 +98,8 @@ let getWinner = function(board) {
         console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         currentCell.text(playerIcon);
+
+        // insert currentCell.html(playerIcon images here)
         app.index =$(this).attr('id');
         app.value = playerIcon;
         api.updateGame(ui.success, ui.failure);
