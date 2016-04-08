@@ -54,16 +54,17 @@ let getWinner = function(board) {
       $('#winner').text("winner is " + playerIcon);
       win = true;
       if (playerIcon === 'Xzibit') {
+       $('#winner').html(`winner is <img src ="${xWinImg}"> Xzibit`);
        xWins += 1;
-       $('#winner').html(`winner is <img src ="${xWinImg}">`);
+       $('#oScore').text(oWins);
 
 
      }
 
      else if (playerIcon === 'Oprah') {
+       $('#winner').html(`winner is <img src ="${oWinImg}" display="block"> Oprah`);
        oWins +=1;
        $('#oScore').text(oWins);
-       $('#winner').html(`winner is <img src ="${oWinImg}">`);
       //  <img src ="${xWinImg}">
      }
 
@@ -75,7 +76,7 @@ let getWinner = function(board) {
    let tie = false;
    if (turnClick === 9 && win === false){
      console.log("It's a tie ya'll!");
-     $('#winner').html(`winner is <img src ="${tieImg}">`);
+     $('#winner').html(`It's a tie! <img src ="${tieImg}"> (You both lost)`);
      tie = true;
 
    }
@@ -86,7 +87,7 @@ let getWinner = function(board) {
 
 
 
-    $('td').on('click', function(){
+    $('td').one('click', function(){
       if (turnClick % 2 === 0) {
         playerIcon = playerIcons[0];
       } else {
@@ -94,6 +95,7 @@ let getWinner = function(board) {
       }
       let currentCell = $(this);
       turnClick++;
+      $(this).off('click');
         console.log(playerIcon);
         console.log("turnclicks current" + turnClick);
         currentCell.text(playerIcon);
@@ -113,6 +115,5 @@ let getWinner = function(board) {
         api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
-        $(this).off('click');
       });
     });
