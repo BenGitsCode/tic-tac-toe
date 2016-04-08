@@ -19,23 +19,27 @@ let playerIcons = ["Xzibit", "Oprah"];
 let playerIcon = "";
 // let oprahImg = "https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif";
 // let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
+
+let playerImg = ["https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif", "https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif"];
 let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
 let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwinner3.gif";
 let tieImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/wehaveatie.gif";
 let win = false;
 let xWins = 0;
 let oWins = 0;
+let playerGif;
 
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
 
-// let newGame = function(){
-//   $('.start-cell').empty();
-//   $('.start-cell').data('board', '');
-//   board = [];
-//   turnClick = 0;
-// };
+function newGame(){
+  $('.start-cell').empty();
+  $('.start-cell').data('board', '');
+  board = [];
+  turnClick = 0;
+  // getWinner();
+}
 
 let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
@@ -50,6 +54,7 @@ let getWinner = function(board) {
        playerIcon === board[2] && playerIcon === board[4] && playerIcon === board[6]){
         //  diag wins
 
+
       console.log("winner is " + playerIcon);
       $('#winner').text("winner is " + playerIcon);
       win = true;
@@ -57,6 +62,7 @@ let getWinner = function(board) {
        $('#winner').html(`winner is <img src ="${xWinImg}"> Xzibit`);
        xWins += 1;
        $('#oScore').text(oWins);
+       newGame();
 
 
      }
@@ -65,12 +71,14 @@ let getWinner = function(board) {
        $('#winner').html(`winner is <img src ="${oWinImg}" display="block"> Oprah`);
        oWins +=1;
        $('#oScore').text(oWins);
-      //  <img src ="${xWinImg}">
+      newGame();
      }
 
    } else{
    }
+
  };
+
  // checks for a tie
  let isTie = function() {
    let tie = false;
@@ -78,6 +86,7 @@ let getWinner = function(board) {
      console.log("It's a tie ya'll!");
      $('#winner').html(`It's a tie! <img src ="${tieImg}"> (You both lost)`);
      tie = true;
+     newGame();
 
    }
  };
@@ -93,12 +102,18 @@ let getWinner = function(board) {
       } else {
         playerIcon = playerIcons[1];
       }
+      if (playerIcon === playerIcons[0]) {
+        playerGif = playerImg[0];
+      }
+        playerGif = playerImg[1];
+
       let currentCell = $(this);
       turnClick++;
       $(this).off('click');
         console.log(playerIcon);
         console.log("turnclicks current" + turnClick);
         currentCell.text(playerIcon);
+        currentCell.html(`<img src ="${playerGif}">`);
         $(this).data('board', playerIcon);   //This is what logs playerIcon to board array
         let attrId = $(this).attr('id');
         board[attrId] = playerIcon;
