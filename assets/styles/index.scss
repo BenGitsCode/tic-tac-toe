@@ -30,6 +30,14 @@ body {
   text-align: center;
   color: #F07818;
 }
+.datbuttons {
+  text-align: center;
+}
+
+#gamesPlayed {
+  font-size: 2em;
+  color: #F07818 ;
+}
 
 table {
   margin: 0 auto;
@@ -68,6 +76,7 @@ select {
   margin-top: 20px;
   text-align: center;
 }
+
 #scoreBoard {
   font-size: 2em;
   text-align: center;

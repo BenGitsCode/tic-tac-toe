@@ -32,9 +32,7 @@ let playerGif;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 // new game cheap way
-// $('#new-game').click(function() {
-//   location.reload();
-// });
+
 
 // function newGame(){
 //   $('.start-cell').empty();
@@ -135,8 +133,7 @@ let getWinner = function(board) {
         isTie(turnClick);
         //this will make page reload on new game button clicked
         //user will still need to login again
-
-
+      
 
       });
     });
