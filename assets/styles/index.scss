@@ -6,7 +6,7 @@ body {
   width: 100%;
   font-family: Impact, Charcoal, sans-serif;
   margin: 0 auto;
-  background-color: #336e7b;
+  background-color: #265B68;
 
 }
 //ID container
@@ -21,11 +21,14 @@ body {
 }
 //Main Header title
 #header {
-  color: #48aD01;
+  color: #39A400;
+  text-align: center;
 }
 
 #winner {
-  font-size: 2em;
+  font-size: 4em;
+  text-align: center;
+  color: #F07818;
 }
 
 table {
@@ -47,6 +50,7 @@ td {
   border-radius: 10px;
   opacity: .75;
   box-shadow: 2px 2px black;
+  background-color: #5F7187;
 }
 
 .start-cell:hover {
@@ -80,6 +84,5 @@ select {
 }
 
 img {
-  width: 130px;
-  height: 120px;
+  width: 35%;
 }
