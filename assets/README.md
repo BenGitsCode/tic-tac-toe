@@ -26,7 +26,7 @@ The main creative spin I focused on was using images of Xzibit and Oprah instead
     * I both learned invaluable git lessons in this project and made enumerable, ghastly mistakes. My good intentions of many commits resulted in many that were not of the quality they should be, and created confusion that resulted in several major merge conflicts. On the bright side, I'm now very familar with merge conflicts, and understand the downside of overly-complex commits and branching.
  * Concision (lackthereof)
     *I struggle with the acheiving the elegancy of brevity in my code (and elsewhere, this README is a un unfortunate testament to that)
-    * while it's an area of weakness for me at present, I see the value in refactoring code, and far-more-importantly, in building it i n very small, purposeful increments and how it affects the final product, and the ease of which you can later manipulate it--or ease of which another developer can read-through/refactor it
+    *while it's an area of weakness for me at present, I see the value in refactoring code, and far-more-importantly, in building it i n very small, purposeful increments and how it affects the final product, and the ease of which you can later manipulate it--or ease of which another developer can read-through/refactor it
 
 ## Unsolved problems:
   * I was never able to get player images to show up as player tokens--but, I was able to use images in representing, win and tie states using a variable to hold the images, and interpolating that variable through a jQuery HTML method.
