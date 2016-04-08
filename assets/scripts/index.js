@@ -19,8 +19,8 @@ let playerIcons = ["Xzibit", "Oprah"];
 let playerIcon = "";
 // let oprahImg = "https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif";
 // let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
-// let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
-// let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwin.gif";
+let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
+let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwinner3.gif";
 let win = false;
 let xWins = 0;
 let oWins = 0;
@@ -54,8 +54,7 @@ let getWinner = function(board) {
       win = true;
       if (playerIcon === 'Xzibit') {
        xWins += 1;
-
-
+       $('#winner').html(`winner is <img src ="${xWinImg}">`);
 
 
      }
@@ -63,22 +62,26 @@ let getWinner = function(board) {
      else if (playerIcon === 'Oprah') {
        oWins +=1;
        $('#oScore').text(oWins);
-
+       $('#winner').html(`winner is <img src ="${oWinImg}">`);
+      //  <img src ="${xWinImg}">
      }
 
-    } else{
-    }
-  };
-  // checks for a tie
-  let isTie = function() {
-    let tie = false;
-    if (turnClick === 9 && win === false){
-      console.log("It's a tie ya'll!");
-      $('#winner').text("It's a tie! (everyone loses)");
-      tie = true;
+   } else{
+   }
+ };
+ // checks for a tie
+ let isTie = function() {
+   let tie = false;
+   if (turnClick === 9 && win === false){
+     console.log("It's a tie ya'll!");
+     $('#winner').text("It's a tie! (everyone loses)");
+     tie = true;
 
-      }
-    };
+   }
+ };
+
+
+
 
 
 
@@ -98,7 +101,7 @@ let getWinner = function(board) {
         board[attrId] = playerIcon;
         currentCell.data('cells', board);
         currentCell.data('player', playerIcon);
-        
+
         console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         currentCell.text(playerIcon);
