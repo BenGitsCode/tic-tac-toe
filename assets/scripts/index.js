@@ -28,10 +28,10 @@ let oWins = 0;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
-// negame doesn't work properly
+
 // let newGame = function(){
 //   $('.start-cell').empty();
-//   $('.start-cell').data('populatedCell', '');
+//   $('.start-cell').data('board', '');
 //   board = [];
 //   turnClick = 0;
 // };
@@ -54,6 +54,7 @@ let getWinner = function(board) {
       win = true;
       if (playerIcon === 'Xzibit') {
        xWins += 1;
+
 
 
      }
