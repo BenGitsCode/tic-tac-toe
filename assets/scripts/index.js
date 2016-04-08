@@ -28,10 +28,10 @@ let oWins = 0;
 
 let board = ["", "", "", "", "", "", "", "", "" ];
 
-// negame doesn't work properly
+
 // let newGame = function(){
 //   $('.start-cell').empty();
-//   $('.start-cell').data('populatedCell', '');
+//   $('.start-cell').data('board', '');
 //   board = [];
 //   turnClick = 0;
 // };
@@ -54,6 +54,8 @@ let getWinner = function(board) {
       win = true;
       if (playerIcon === 'Xzibit') {
        xWins += 1;
+
+
 
 
      }
@@ -96,6 +98,7 @@ let getWinner = function(board) {
         board[attrId] = playerIcon;
         currentCell.data('cells', board);
         currentCell.data('player', playerIcon);
+        
         console.log("cell " + currentCell.attr('id')); //logs which cell is clicked by it's id
         console.log("cell class " + currentCell.attr('class')); // logs the class of clicked cell
         currentCell.text(playerIcon);

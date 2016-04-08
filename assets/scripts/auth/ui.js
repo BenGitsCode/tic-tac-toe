@@ -1,12 +1,13 @@
 'use strict';
 
 const app = require('../app-data');
+// const newGame = require('./index.js');
 
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
   console.log("Sign in successful");
-
+$('#new-game').click();
 };
 
 const signOutSuccess = () => {
@@ -18,6 +19,7 @@ const signOutSuccess = () => {
 const createGameSuccess = (data) => {
   app.game = data.game;
   console.log(data);
+  // newGame();
   console.log("You created a game, big whoop!");
 };
 
@@ -28,7 +30,11 @@ const updateGameSuccess = (data) => {
   console.log(app);
   console.log("You have updated the game, sweet dude!");
 };
-
+const getGameSuccess = (data) => {
+  app.game = data.game;
+  console.log(data);
+  $('#gamesPlayed').html(data.games.length);
+};
 
 
 
@@ -48,4 +54,5 @@ module.exports = {
   createGameSuccess,
   updateGameSuccess,
   app,
+  getGameSuccess,
 };
