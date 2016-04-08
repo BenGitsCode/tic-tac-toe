@@ -22,9 +22,9 @@ The main creative spin I focused on was using images of Xzibit and Oprah instead
   * Whether I could go back and start over, or have more time to work on it, I would want to structure the game logic around that concept from the start or refactor my current code around it, respectively.
     * I didn't have enough time to get truly comfortable with CSS before starting the project, which made my original approach of "build the HTML and CSS skeleton first, and then build functionality into it" actually consume the majority of my first 20-40 hours, instead of being a simple foundation step.
     * using bootstrap allowed me to weave around some of those tasks with fancy bootstrap shortcuts faster than hard-coding all of my style elements would have been--but not yet having familiarity with bootstrap idiosyncracies created more speed bumps as well.
-  * GIT
+  * ### GIT
     * I both learned invaluable git lessons in this project and made enumerable, ghastly mistakes. My good intentions of many commits resulted in many that were not of the quality they should be, and created confusion that resulted in several major merge conflicts. On the bright side, I'm now very familar with merge conflicts, and understand the downside of overly-complex commits and branching.
-  * Concision (lackthereof)
+  * ### Concision (lackthereof)
     * I struggle with the acheiving the elegancy of brevity in my code (and elsewhere, this README is a un unfortunate testament to that)
     * while it's an area of weakness for me at present, I see the value in refactoring code, and far-more-importantly, in building it in very small, purposeful increments and how it affects the final product, and the ease of which you can later manipulate it--or ease of which another developer can read-through/refactor it
 
