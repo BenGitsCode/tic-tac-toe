@@ -1,13 +1,13 @@
-GA WDI Project-1 - Tic Tac Toe
+#GA WDI Project-1 - Tic Tac Toe
 
-Github pages link: http://benjamski.github.io/tic-tac-toe/index.html
+## Github pages link: http://benjamski.github.io/tic-tac-toe/index.html
 
-User Stories:
+## User Stories:
 https://github.com/Benjamski/tic-tac-toe/blob/master/assets/user-stories.md
 
 The main creative spin I focused on was using images of Xzibit and Oprah instead of X's and O's because they are both great sources of funny gifs, and because alliteration is great.
 
-Data Structure-
+## Data Structure-
   * I used Html and bootstrap CSS as the foundation for my project.
   * I originally started writing vanilla javascript for my game logic, switched to jQuery when I realized I would have to translate it into that after, and wasted some more valuable time bouncing between the two methods instead of incrementally following through with one or the other.
   * I used ajax requests to communicate CRUDs to the API and may have saved time in troubleshooting them if I had utilized curl requests to test them as they were built.
@@ -15,7 +15,7 @@ Data Structure-
   * I definitely made changes to my wireframe, but generally maintained the gestalt of its original design.
     -Even in making a simple wireframe, I hade never communicated such a design into front-end presentation before, so the gap between "i want it to look like this" and "how I will make it look like This" was vast--providing an immense learning experience. That same gap was present in almost every space between design and execution of code to get there, be it HTML, CSS or js.
 
-Issues:
+## Issues:
 
   * The biggest issue I ran into with that was that I didn't have the foresight to build the structure of my javascript game logic around that conceit. This resulted in me getting my game logic working, and not being able to incorporate images as player tokens without a high risk of breaking my game logic, or its connection the API.
 
@@ -28,7 +28,7 @@ Issues:
     * I struggle with the acheiving the elegancy of brevity in my code (and elsewhere, this README is a un unfortunate testament to that)
     * while it's an area of weakness for me at present, I see the value in refactoring code, and far-more-importantly, in building it in very small, purposeful increments and how it affects the final product, and the ease of which you can later manipulate it--or ease of which another developer can read-through/refactor it
 
-Unsolved problems:
+## Unsolved problems:
   * I was never able to get player images to show up as player tokens--but, I was able to use images in representing, win and tie states using a variable to hold the images, and interpolating that variable through a jQuery HTML method.
     * This got me VERY close to my goal, but the "aha" moments of greatest value came to me late at night in the final hours of the project and I did not want to risk breaking my working code with such a complex refactoring.
   * On at least two occasions I made an attempt to both refactor my index.js code into cleaner components and export and import them from separate, concise files. On both occasions, I ran into too many bugs. Between not being YET comfortable enough with managing exports and structuring multiple connected files in a way that was organized and executed them efficaciously, the risk outweighed the reward. It became a pipe dream--but either starting over with more methodology to my data structure or refactoring everything piece by piece, is a beautiful dream nonetheless, one that will forever haunt me.
@@ -45,7 +45,7 @@ Unsolved problems:
 
 
 
-Wireframe links
+## Wireframe links
 
 https://gyazo.com/d1123fb0b2b972d431d8372da9644c06
 https://gyazo.com/07da39b3c99adaf5a489ed662934e6e8
