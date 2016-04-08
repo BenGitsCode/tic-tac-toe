@@ -40,7 +40,7 @@ const signCheck = () => {
   });
   $('#change-password').on('submit', function (event) {
     event.preventDefault();
-    let data = "data";
+    let data = getFormFields(this);
     authApi.changePass(authUi.success, authUi.failure, data);
     console.log(data);
   });

@@ -33,7 +33,9 @@ The main creative spin I focused on was using images of Xzibit and Oprah instead
     * This got me VERY close to my goal, but the "aha" moments of greatest value came to me late at night in the final hours of the project and I did not want to risk breaking my working code with such a complex refactoring.
   * On at least two occasions I made an attempt to both refactor my index.js code into cleaner components and export and import them from separate, concise files. On both occasions, I ran into too many bugs. Between not being YET comfortable enough with managing exports and structuring multiple connected files in a way that was organized and executed them efficaciously, the risk outweighed the reward. It became a pipe dream--but either starting over with more methodology to my data structure or refactoring everything piece by piece, is a beautiful dream nonetheless, one that will forever haunt me.
 
-
+## Unfinished:
+  * When I got my winner message to display a gif it inspired me to want to make that gif variable actually reference an object of several key value pairs, and use a math.random() method to determine a random winner gif out of a set for each. This is very doable and I plan to incorpate it in later.
+  * using variable interpolation through through that html method will make it possible to use images as the player tokens, but it will require me to refactor mygame logic quite a bit.
 
 
 
