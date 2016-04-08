@@ -62,7 +62,7 @@ let getWinner = function(board) {
       $('#winner').text("winner is " + playerIcon);
       win = true;
       if (playerIcon === 'Xzibit') {
-       $('#winner').html(`winner is <img src ="${xWinImg}"> Xzibit`);
+       $('#winner').html(`Winner is <img src ="${xWinImg}"> Xzibit`);
        xWins += 1;
        $('#oScore').text(oWins);
 
@@ -71,7 +71,7 @@ let getWinner = function(board) {
      }
 
      else if (playerIcon === 'Oprah') {
-       $('#winner').html(`winner is <img src ="${oWinImg}" display="block"> Oprah`);
+       $('#winner').html(`Winner is <img src ="${oWinImg}" display="block"> Oprah`);
        oWins +=1;
        $('#oScore').text(oWins);
 
