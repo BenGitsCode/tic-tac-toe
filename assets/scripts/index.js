@@ -21,6 +21,7 @@ let playerIcon = "";
 // let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
 let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
 let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwinner3.gif";
+let tieImg = "";
 let win = false;
 let xWins = 0;
 let oWins = 0;
