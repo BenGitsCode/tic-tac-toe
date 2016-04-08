@@ -21,7 +21,7 @@ let playerIcon = "";
 // let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
 let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
 let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwinner3.gif";
-let tieImg = "";
+let tieImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/wehaveatie.gif";
 let win = false;
 let xWins = 0;
 let oWins = 0;
@@ -75,7 +75,7 @@ let getWinner = function(board) {
    let tie = false;
    if (turnClick === 9 && win === false){
      console.log("It's a tie ya'll!");
-     $('#winner').text("It's a tie! (everyone loses)");
+     $('#winner').html(`winner is <img src ="${tieImg}">`);
      tie = true;
 
    }
