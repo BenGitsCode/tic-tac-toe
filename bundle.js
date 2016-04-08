@@ -44,8 +44,8 @@ webpackJsonp([0],[
 	  var playerIcon = "";
 	  // let oprahImg = "https://media.giphy.com/media/3o7ZeFpK0qqSpsWNsA/giphy.gif";
 	  // let xzibitImg = "https://media4.giphy.com/media/ToMjGpBGgDijEba1Te8/200.gif";
-	  // let oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
-	  // let xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwin.gif";
+	  var xWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/xzibitwin.gif";
+	  var oWinImg = "https://dl.dropboxusercontent.com/u/5056567/gifs/oprahwinner3.gif";
 	  var win = false;
 	  var xWins = 0;
 	  var oWins = 0;
@@ -72,9 +72,12 @@ webpackJsonp([0],[
 	      win = true;
 	      if (playerIcon === 'Xzibit') {
 	        xWins += 1;
+	        $('#winner').html('winner is <img src ="' + xWinImg + '">');
 	      } else if (playerIcon === 'Oprah') {
 	        oWins += 1;
 	        $('#oScore').text(oWins);
+	        $('#winner').html('winner is <img src ="' + oWinImg + '">');
+	        //  <img src ="${xWinImg}">
 	      }
 	    } else {}
 	  };
