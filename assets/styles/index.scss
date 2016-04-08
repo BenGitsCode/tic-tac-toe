@@ -6,7 +6,7 @@ body {
   width: 100%;
   font-family: Impact, Charcoal, sans-serif;
   margin: 0 auto;
-  background-color: #336e7b;
+  background-color: #59AE7F;
 
 }
 //ID container
@@ -21,7 +21,8 @@ body {
 }
 //Main Header title
 #header {
-  color: #48aD01;
+  color: #2F79C3;
+  text-align: center;
 }
 
 #winner {
@@ -47,6 +48,7 @@ td {
   border-radius: 10px;
   opacity: .75;
   box-shadow: 2px 2px black;
+  background-color: #5F7187;
 }
 
 .start-cell:hover {
