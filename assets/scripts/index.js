@@ -42,6 +42,14 @@ let board = ["", "", "", "", "", "", "", "", "" ];
 // });
 // }
 
+function newGame(){
+  $("td" ).empty(); // this make all td elements (cells) empty
+  // $('.start-cell').css("background-color", "transparent");
+  $('.start-cell').data('populatedCell', '');
+  board = [];
+  clickCounter = 0;
+};
+
 let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
        playerIcon === board[3] && playerIcon === board[4] && playerIcon === board[5] ||
@@ -131,9 +139,8 @@ let getWinner = function(board) {
         api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
-        //this will make page reload on new game button clicked
-        //user will still need to login again
-      
+
+
 
       });
     });
