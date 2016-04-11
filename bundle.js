@@ -184,7 +184,7 @@ webpackJsonp([0],[
 	  });
 	  $('#change-password').on('submit', function (event) {
 	    event.preventDefault();
-	    var data = "data";
+	    var data = getFormFields(this);
 	    authApi.changePass(authUi.success, authUi.failure, data);
 	    console.log(data);
 	  });
