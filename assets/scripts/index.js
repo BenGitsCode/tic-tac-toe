@@ -33,14 +33,14 @@ let playerGif;
 let board = ["", "", "", "", "", "", "", "", "" ];
 // new game cheap way
 
+// New game gamereset function
+function newGame(){
+  $('.start-cell').empty();
+  $('.start-cell').data('board', '');
+  board = [];
+  turnClick = 0;
+}
 
-// function newGame(){
-//   $('.start-cell').empty();
-//   $('.start-cell').data('board', '');
-//   board = [];
-//   turnClick = 0;
-// });
-// }
 
 let getWinner = function(board) {
    if (playerIcon === board[0] && playerIcon === board[1] && playerIcon === board[2] ||
@@ -63,15 +63,14 @@ let getWinner = function(board) {
        $('#winner').html(`Winner is <img src ="${xWinImg}"> Xzibit`);
        xWins += 1;
        $('#oScore').text(oWins);
-
-
-
+       newGame();
      }
 
      else if (playerIcon === 'Oprah') {
        $('#winner').html(`Winner is <img src ="${oWinImg}" display="block"> Oprah`);
        oWins +=1;
        $('#oScore').text(oWins);
+       newGame();
 
      }
 
@@ -80,6 +79,9 @@ let getWinner = function(board) {
 
  };
 
+
+
+
  // checks for a tie
  let isTie = function() {
    let tie = false;
@@ -87,6 +89,7 @@ let getWinner = function(board) {
      console.log("It's a tie ya'll!");
      $('#winner').html(`It's a tie! <img src ="${tieImg}"> (You both lost)`);
      tie = true;
+     newGame();
    }
  };
 
@@ -97,7 +100,7 @@ let getWinner = function(board) {
 
 
 
-    $('td').one('click', function(){
+    $('td').on('click', function(){
       if (turnClick % 2 === 0) {
         playerIcon = playerIcons[0];
       } else {
@@ -131,9 +134,8 @@ let getWinner = function(board) {
         api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
-        //this will make page reload on new game button clicked
-        //user will still need to login again
       
+
 
       });
     });
