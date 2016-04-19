@@ -129,12 +129,14 @@ let getWinner = function(board) {
         currentCell.text(playerIcon);
 
         // insert currentCell.html(playerIcon images here)
+        //app index here is the cell numbers 0-8
         app.index =$(this).attr('id');
+        // app value is the playrtoken (x or o)
         app.value = playerIcon;
         api.updateGame(ui.success, ui.failure);
         getWinner(board);
         isTie(turnClick);
-      
+
 
 
       });
