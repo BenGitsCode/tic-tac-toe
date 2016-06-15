@@ -7,7 +7,6 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
   console.log("Sign in successful");
-$('#new-game').click();
 };
 
 const signOutSuccess = () => {
